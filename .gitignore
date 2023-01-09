@@ -1,6 +1,10 @@
 /venv/
 /test_01.py
 /test_02.py
-/.idea/inspectionProfiles/profiles_settings.xml
-/.idea/modules.xml
-/.idea/Good, good Python [S. Balakirev].iml
+#/.idea/inspectionProfiles/profiles_settings.xml
+#/.idea/modules.xml
+#/.idea/Good, good Python [S. Balakirev].iml
+#/.idea/vcs.xml
+#/.idea/misc.xml
+/.idea/
+/main.py
