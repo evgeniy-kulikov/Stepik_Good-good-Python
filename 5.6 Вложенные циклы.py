@@ -191,5 +191,3 @@ for i in range(len(cash)):
     while n // cash[i] != 0:
         n -= cash[i]
         print(cash[i], end=' ')
-
-
