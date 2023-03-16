@@ -1,6 +1,6 @@
 # ввод данных. Данные вводятся через пробел, одной строкой
 # n, k = map(int, input().split())
-
+""""""
 """
 тернарный оператор:
 
@@ -13,3 +13,7 @@ car = "Ferrari" if is_fast else "Sedan"
 is_fast = True
 car = ("Sedan", "Ferrari")[is_fast]
 """
+
+lst = ["a", "b", "c"]
+''.join(map(str, lst))  # способ преобразовать список в строку
+"abc"
