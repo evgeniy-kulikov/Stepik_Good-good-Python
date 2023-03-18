@@ -47,6 +47,12 @@ Output: 1 0 0 0
 n = int(input())
 s = [print(*[1 if k == el else 0 for k in range(n)]) for el in range(n)]
 
+# Вариант
+n = int(input())
+for el in range(n):
+    print(*[1 if k == el else 0 for k in range(n)])
+
+
 
 """
 Вводятся названия городов в строку через пробел. 
