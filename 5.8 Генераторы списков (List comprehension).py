@@ -143,4 +143,3 @@ s = list(map(str, input().split()))
 s = [[s[i], int(s[i + 1])] for i in range(0, len(s) - 1, 2)]  # range(0, 5, 2) - 3-й аргумент, это шаг
 # s = [[s[i], int(s[i + 1])] for i in range(0, len(s) - 1) if i % 2 == 0]
 print(s)
-
