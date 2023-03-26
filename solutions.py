@@ -30,3 +30,10 @@ list_of_nums = [1, 2, 3, 8, 15, 42]
 # вывод только четных значений из списка
 for item in get_even(list_of_nums):
     print(item, end=" ")  # 2 8 42
+
+
+# проверка валидности email
+import re
+def is_correct_email(email: str) -> bool:
+    pattern = r'[0-9A-Za-z_]+@[0-9A-Za-z_]+\.[0-9A-Za-z_]+'
+    return not not re.fullmatch(pattern, email)
