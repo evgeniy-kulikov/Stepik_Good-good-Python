@@ -18,6 +18,9 @@ lst = ["a", "b", "c"]
 ''.join(map(str, lst))  # способ преобразовать список в строку
 "abc"
 
+# Двумерный список в одномерный
+dual_ls = [[1, 2], [3, 4]]
+single_ls = [el for item in dual_ls for el in item]
 
 # реализация функции enumerate()
 def get_even(list_of_nums):

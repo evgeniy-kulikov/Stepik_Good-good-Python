@@ -109,28 +109,58 @@ def check_email(email):
             ls_email.append(email_part[1])
             if cnt == 0:
                 for item in ls_email:
-                    for el in item:
-                        if 96 < ord(el) < 123 or ord(el) == 95 or el.isdigit():
-                            continue
-                        else:
-                            cnt += 1
-                            break
+                    if len(item):
+                        for el in item:
+                            if 96 < ord(el) < 123 or ord(el) == 95 or el.isdigit():
+                                continue
+                            else:
+                                cnt += 1
+                                break
+                    else:
+                        cnt += 1
+                        break
         else:
             cnt += 1
     else:
         cnt += 1
-
-    if cnt == 0:
-        print("ДА")
-    else:
-        print("НЕТ")
+    print(('НЕТ', "ДА")[cnt == 0])
 
 
 email = input().lower()
 check_email(email)
 
+
+# Улучшенное решение
+def check_email(email):
+    if "@" in email and email.count("@") == 1 and len(email) > 4:
+        ls_email = email.split("@")
+        if "." in ls_email[1] and email.count(".") == 1:
+            email_part = ls_email.pop().split(".")
+            ls_email.append(email_part[0])
+            ls_email.append(email_part[1])
+
+            for item in ls_email:
+                if len(item):
+                    for el in item:
+                        if 96 < ord(el) < 123 or ord(el) == 95 or el.isdigit():
+                            continue
+                        else:
+                            return False
+                else:
+                    return False
+        else:
+            return False
+    else:
+        return False
+    return True
+
+email = input().lower()
+# email = "_@_._"  # Пропускает, но соответствует условию задачи
+print(('НЕТ', "ДА")[check_email(email)])
+
+
 # Вариант
-# пропускает .@.@.@
+# пропускает .@.@  .@  @.
 def check_mail(mail):
     allow = set("abcdefghijklmnopqrstuvwxyz0123456789_@.")
     nesessary = {"@", "."}
