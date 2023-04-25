@@ -11,8 +11,54 @@
 инструкция nonlocal изменяет значение переменных в объемлющей функции. 
 Для глобальной области видимости инструкция nonlocal не имеет действия
 """
-# Инструкция nonlocal
+x = 0
+def outer():
+    x = 1
+    def inner():
+        x = 2
+        print("inner: ", x)  # inner: 2
 
+    inner()
+    print("outer: ", x)  # outer: 1
+
+outer()
+print("global: ", x)  # global: 0
+
+
+
+x = 0
+def outer():
+    x = 1
+    def inner():
+        nonlocal x
+        x = 2
+        print("inner: ", x)  # inner: 2
+
+    inner()
+    print("outer: ", x)  # outer: 2
+
+outer()
+print("global: ", x)  # global: 0
+
+
+
+x = 0
+def outer():
+    global x
+    x = 1
+    def inner():
+        # nonlocal x # Иначе будет ошибка
+        x = 2
+        print("inner: ", x)  # inner: 2
+
+    inner()
+    print("outer: ", x)  # outer: 1
+
+outer()
+print("global: ", x)  # global: 1
+
+
+# Инструкция nonlocal
 # Несколько объемлющих функций
 
 def Fn1():
