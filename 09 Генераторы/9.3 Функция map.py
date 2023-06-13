@@ -99,3 +99,21 @@ print(''.join(res))
 st = input().lower()
 res = map(lambda el: t.get(el, '-'), st)
 print(''.join(res))
+
+
+# 06
+"""
+Вводятся названия городов в одну строчку через пробел. 
+Необходимо определить функцию map, которая бы возвращала названия городов только длиной более 5 символов. 
+Вместо остальных названий - строку с дефисом ("-").
+Input:  Москва Уфа Вологда Тула Владивосток Хабаровск
+Output: Москва - Вологда - Владивосток Хабаровск
+"""
+st = input().split()
+res = map(lambda x: x if len(x) > 5 else '-', st)
+print(*res)
+
+# без map()
+st = input().split()
+res = [el if len(el) > 5 else '-' for el in st]
+print(*res)
