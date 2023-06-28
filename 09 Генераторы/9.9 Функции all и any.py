@@ -30,6 +30,18 @@ print(bool([False]))  # True
 d = [1, 2.5, "python", [1], [1, 2]]
 print(all(d))  # True
 
+
+"""
+x, y = True, True
+x and y  # True
+
+x, y = True, False
+x and y  # False
+
+x, y = False, False
+x and y  # False
+"""
+
 # имитация работы функции all
 # Если хоть один элемент bool(el) будет False, то all_res станет False
 all_res = True
@@ -47,6 +59,17 @@ print(any(a))  # True
 a = [False, 0, '', []]
 print(any(a))  # False
 
+
+"""
+x, y = True, True
+x or y  # True
+
+x, y = True, False
+x or y  # True
+
+x, y = False, False
+x or y  # False
+"""
 
 # имитация работы функции any
 d = [True, 0, False, '']
