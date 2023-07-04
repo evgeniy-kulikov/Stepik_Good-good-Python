@@ -40,3 +40,7 @@ import re
 def is_correct_email(email: str) -> bool:
     pattern = r'[0-9A-Za-z_]+@[0-9A-Za-z_]+\.[0-9A-Za-z_]+'
     return not not re.fullmatch(pattern, email)
+
+
+# Построчное добавление элементов в список, пока не будет введено 'конец'
+lst = [el for el in iter(input, 'конец')]
